@@ -1,23 +1,21 @@
 [package]
-name = "util_macros"
-version = "0.1.0"
-edition.workspace = true
-publish = false
+name = "util_macros-gpui-standalone"
+version = "1.4.4"
 license = "Apache-2.0"
 description = "Utility macros for Zed"
-
-[lints]
-workspace = true
+edition = "2024"
+repository = "https://github.com/zed-industries/zed"
 
 [lib]
 path = "src/util_macros.rs"
 proc-macro = true
 doctest = false
-
-[dependencies]
-quote.workspace = true
-syn.workspace = true
-perf.workspace = true
+name = "util_macros"
 
 [features]
 perf-enabled = []
+
+[dependencies]
+perf = {package = "perf-gpui-standalone", version = "1.4.4"}
+quote = "^1.0.9"
+syn = {version = "^2.0.101", features = ["full", "extra-traits", "visit-mut"]}
